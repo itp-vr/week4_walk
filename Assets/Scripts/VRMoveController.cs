@@ -74,12 +74,15 @@ public class VRMoveController : MonoBehaviour
 
 	private Vector2 GetInput ()
 	{
-			
-		Vector2 input = new Vector2
-			{
-				x = Input.GetAxis("Horizontal"),
-				y = Input.GetAxis("Vertical")
-			};
+		float x,y;
+		if (Input.GetMouseButton(0)){
+			x=0;
+			y = 1;
+		} else {
+		x = Input.GetAxis("Horizontal");
+		y = Input.GetAxis("Vertical");
+		}
+		Vector2 input = new Vector2(x,y);
 		return input;
 	}
 }
